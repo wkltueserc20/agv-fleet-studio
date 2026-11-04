@@ -1,4 +1,6 @@
-# Rust RCS Lab — 本機介接與車隊流程模擬
+# AGV Fleet Studio — 車隊調度與作業流程模擬工作台
+
+GitHub：https://github.com/wkltueserc20/agv-fleet-studio
 
 同一台 Windows 電腦執行七個獨立 Rust 程序：外部介接入口、WCS、RCS、ECS 與三台模擬 AGV，以 HTTP/JSON 協調作業。
 
