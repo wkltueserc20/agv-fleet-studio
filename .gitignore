@@ -1,0 +1,27 @@
+/target/
+/run/
+/data/
+/bin/
+/backups/
+
+# Local credentials and environment settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local editor and Python caches
+.vs/
+.idea/
+__pycache__/
+*.py[cod]
+*.user
+Thumbs.db
+.DS_Store
+
+# Shareable packages are distributed separately
+*.rar
+*.zip

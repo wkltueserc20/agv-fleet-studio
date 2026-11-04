@@ -1,0 +1,14 @@
+<section class="panel" id="station-control">
+  <div class="panel-head"><div><h2>點位占用與進站等待</h2><p class="sub">車輛先申請、RCS 預留後才進站。有人占用時，自動調度空閒車讓位，確認完成後再放行。</p></div><span class="badge" id="station-wait-count">讀取中</span></div>
+  <div class="station-grid" id="station-grid"></div>
+  <div class="station-waits" id="station-waits" aria-live="polite"></div>
+  <div class="station-demo" id="auto-yield"><h3>RCS 自動讓位</h3>
+    <p>正常建立搬運任務即可。取料站或目的地被空閒車占用時，RCS 自動預留最近的可用等待點，派出讓位任務；等讓位車到達後，再放行原搬運車。</p>
+    <div id="yield-tasks" aria-live="polite"></div>
+    <p class="sub">忙碌、暫停、離線或狀態待確認的車不強制移動。沒有空等待點時持續等待；已接受的讓位任務會執行到等待點。取消讓位會讓原任務保持等待。</p>
+  </div>
+  <p class="station-limits">目前只管理站點；已支援空閒車自動讓位、路段與路口預約；尚未模擬車體避碰。若互相等待，需人工調度。離線車保留最後位置；RCS 重啟後保留未確認的預留。</p>
+</section>
+<style>
+#station-control{margin-bottom:24px}.station-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 22px 16px}.station-slot{border:1px solid var(--line);border-radius:7px;padding:12px;min-width:0;background:#fafcf7}.station-slot.occupied{background:#fff4dd;border-color:#d5b169}.station-slot.reserved{box-shadow:inset 0 3px #326b95}.station-slot strong{font-size:13px}.station-slot p{font-size:11px;overflow-wrap:anywhere;margin:7px 0}.station-waits{padding:0 22px}.station-wait{padding:12px;background:#fff4dd;border-left:3px solid #a97429;margin-bottom:10px;font-size:12px;overflow-wrap:anywhere}.station-wait small{display:block;margin-top:6px}.station-demo{margin:12px 22px;padding:16px;border:1px solid var(--line);border-radius:8px}.station-demo h3{margin:0 0 10px}.station-demo p,.station-demo summary{font-size:12px;line-height:1.9}.station-buttons{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.station-buttons button{white-space:normal}.station-buttons label{font-size:12px}.station-limits{font-size:11px;color:var(--muted);padding:0 22px 18px;line-height:1.8}.station.occupied{border-color:#a97429;background:#fff4dd}.station.reserved{box-shadow:0 0 0 3px #a3bed3}.station small{white-space:normal;font-size:9px}.station.park{font-size:10px;padding:6px}@media(max-width:800px){.station-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.station-buttons button{width:100%}}
+</style>
